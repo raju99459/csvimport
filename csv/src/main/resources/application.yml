@@ -1,0 +1,46 @@
+# Test configuration,  for local setup only
+
+## Spring DATASOURCE (DataSourceAutoConfiguration & DataSourceProperties)
+spring:
+  datasource:
+    driverClassName: org.postgresql.Driver
+    platform: postgres
+    url: jdbc:postgresql://localhost:5433/csv
+    username:
+    password:
+
+
+
+  # The SQL dialect makes Hibernate generate better SQL for the chosen database
+  jpa:
+    database: POSTGRESQL
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        temp:
+          use_jdbc_metadata_defaults: false
+
+    # Hibernate ddl auto (create, create-drop, validate, update)
+    hibernate:
+      ddl-auto: update
+
+
+# Max file size.
+  servlet:
+    multipart:
+      max-file-size: 5GB
+# Max request size.
+      max-request-size: 5MB
+server:
+  port: 8080
+
+
+logging:
+  level:
+    org:
+      springframework: ERROR
+    com:
+      mkyong: DEBUG
+
+  # output to a file
+  path: C:\Users\raju9\Desktop\logging
