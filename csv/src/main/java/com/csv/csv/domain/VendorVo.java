@@ -25,11 +25,15 @@ public class VendorVo {
     @NotEmpty
     private String lastName;
 
+    @NonNull
+    @NotEmpty
     @Email
     private String email;
 
     private Integer age;
 
+    @NonNull
+    @NotEmpty
     @Length(min = 10, max = 10)
     private String mobile;
 
